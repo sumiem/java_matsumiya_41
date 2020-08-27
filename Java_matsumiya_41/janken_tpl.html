@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+    <div class="top"><img src="./img/01janken.png" alt="janken"></div>
+  <ul>
+    <li id="gu_btn"><a href="#judgment">
+        <img src="./img/00gu.png" alt=""> </a></li>
+    
+    <li id="cho_btn"><a href="#judgment">
+        <img src="./img/00choki.png" alt=""></a></li>
+
+    <li id="par_btn"><a href="#judgment">
+        <img src="./img/00par.png" alt=""></a></li>
+
+  </ul>
+  <div class="kekka" id="result">
+    <!-- <div>PC「<span id="pc_hands"></span>」</div> -->
+    <div class="pc"><img src="./img/PC.png" alt=""></div>
+    <div class="handi"><span id="hands_image"></span></div>
+ </div>
+ <div class="people">
+    <div id="judgment">勝負！「<span id="kachi_make"></span>」</div>
+    <div class="feel"> <span id="ifeeling"></span></div>
+</div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+//1が出てたらアイコ　２勝ち　３負け
+
+$("#gu_btn").on("click", function(){
+    const num = Math.ceil( Math.ceil (Math.random()* 3));
+    console.log(num);
+    if(num==1){
+        // $("#pc_hands").html('グー');
+        $("#hands_image").html('<img src="./img/0gu_bar.png">');
+        $("#kachi_make").html('あいこ') ;
+        $("#ifeeling").html('<img src="./img/001draw.png">');
+
+    }
+    if(num==2){
+        // $("#pc_hands").html('チョキ');
+        $("#hands_image").html('<img src="./img/0choki_bar.png">');
+        $("#kachi_make").html('勝ち');
+        $("#ifeeling").html('<img src="./img/001winner.png">');
+    }
+    if(num==3){
+        // $("#pc_hands").html('パー');
+        $("#hands_image").html('<img src="./img/0par_bar.png">');
+        $("#kachi_make").html('負け');
+        $("#ifeeling").html('<img src="./img/001loser.png">');
+    }
+
+    });
+
+$("#cho_btn").on("click", function(){
+const num = Math.ceil( Math.ceil (Math.random()* 3));
+console.log(num);
+if(num==1){
+    // $("#pc_hands").html('チョキ');
+    $("#hands_image").html('<img src="./img/0choki_bar.png">');
+    $("#kachi_make").html('あいこ！');
+    $("#ifeeling").html('<img src="./img/001draw.png">');
+}
+if(num==2){
+    // $("#pc_hands").html('パー');
+    $("#hands_image").html('<img src="./img/0par_bar.png">');
+    $("#kachi_make").html('勝ち！');
+    $("#ifeeling").html('<img src="./img/001winner.png">');
+}
+if(num==3){
+    // $("#pc_hands").html('グー');
+    $("#hands_image").html('<img src="./img/0gu_bar.png">');
+    $("#kachi_make").html('負け！');
+    $("#ifeeling").html('<img src="./img/001loser.png">');
+}
+
+});
+
+$("#par_btn").on("click", function(){
+const num = Math.ceil( Math.ceil (Math.random()* 3));
+console.log(num);
+if(num==1){
+    // $("#pc_hands").html('パー');
+    $("#hands_image").html('<img src="./img/0par_bar.png">');
+    $("#kachi_make").html('あいこ！');
+    $("#ifeeling").html('<img src="./img/001draw.png">');
+}
+if(num==2){
+    // $("#pc_hands").html('グー');
+    $("#hands_image").html('<img src="./img/0gu_bar.png">');
+    $("#kachi_make").html('勝ち！');
+    $("#ifeeling").html('<img src="./img/001winner.png">');
+}
+if(num==3){
+    // $("#pc_hands").html('チョキ');
+    $("#hands_image").html('<img src="./img/0choki_bar.png">');
+    $("#kachi_make").html('負け！');
+    $("#ifeeling").html('<img src="./img/001loser.png">');
+}
+
+});
+
+    
+    
+    
+    
+    
+    
+    
+
+</script>
+</body>
+</html>
